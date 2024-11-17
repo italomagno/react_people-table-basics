@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 export function LayoutComponent({ children }: { children: ReactNode }) {
   const location = useLocation();
   const isHomeActive = location.pathname === '/' ? true : false;
-  const isPeopleActive = location.pathname === '/people' ? true : false;
+  const isPeopleActive = location.pathname.startsWith('/people') ? true : false;
 
   return (
     <div data-cy="app">
